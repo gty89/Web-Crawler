@@ -1,11 +1,11 @@
 <?php
-  $html = array( "Dr. Byron Gao.html", "Dr. Xiao Chen.html", "Dr. Vangelis Metsis.html");
+  $input = fopen( "input.txt", "r") or die("Unable to open file!";
   // They are the professors who teach me in this semester;
-  $output = array( "output1.txt", "output2.txt", "output3.txt");
   $flag1 = $flag2 = false;
-  for( $i = 0; $i < 3; $i += 1)
+  while( !feof( $input))
   {
-    $file = fopen( $html[$i], "r");
+  	$html = fgets( $input);
+    $file = fopen( $html, "r");
     while( !feof($file))
     {
       $str = fgets($file);
@@ -57,7 +57,8 @@
     //To varifying the answers by printing;
 
     // Now it is time to output;
-    $file = fopen( $output[$i], "w+");
+    $output = str_replace(".html", "_output.txt", $html)
+    $file = fopen( $output, "w+");
     
     fwrite($file, "Name: ");
     fwrite($file, $name);
