@@ -57,7 +57,7 @@
     //To varifying the answers by printing;
 
     // Now it is time to output;
-    $output = str_replace(".html", "_output.txt", $html)
+    $output = $name . "_output.txt"
     $file = fopen( $output, "w+");
     
     fwrite($file, "Name: ");
