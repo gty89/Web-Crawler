@@ -45,11 +45,6 @@
           $flag2 = false;
         }
       }
-
-      if( preg_match( "/accounts\/profiles\/[A-Za-z0-9_%-]+/", $str, $matches))
-      {
-        $web = $matches[0];
-      }
     }
     fclose($file);
 
@@ -76,8 +71,8 @@
     fwrite($file, $email);
     fwrite($file, "\n");
 
-    fwrite($file, "Webpage: https://cs.txstate.edu/");
-    fwrite($file, $web);
+    fwrite($file, "Webpage: ");
+    fwrite($file, $html);
     fwrite($file, "\n");
     // The head is: https://cs.txstate.edu/
     // Since it is a downloading website, this original address is not recorded, so I directly add the front part of it;
